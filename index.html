@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB Project</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap">
+    <link rel="icon" href="icon/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#book-online">Book Online</a></li>
+            </ul>
+            <div class="whatsapp">
+                <a href="https://wa.me/918089199264" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon"> WhatsApp
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Background Image Section -->
+    <div class="bg-image-container">
+        <div class="overlay-image-container">
+            <img src="elements/elements/romeproject-logo-final-idea-glow.png" alt="Overlay Image">
+        </div>
+        <div class="bottom-image-container">
+            <img src="images/waves.png" alt="Bottom Image">
+        </div>
+        <div class="bottom-image-container-2">
+            <img src="images/waves2.png" alt="Bottom Image 2">
+        </div>
+    </div>
+    
+    <!-- New PNG Image Section -->
+    <div class="new-png-container">
+        <img src="buttons/pngwing.com.png" alt="New PNG Image">
+    </div>
+
+    <!-- Video Section -->
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="animation/Dark Background Web.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Vertical Lines Section -->
+    <div class="vertical-lines-container">
+        <div></div> <!-- Middle line -->
+    </div>
+
+    <!-- Buttons Section -->
+    <div class="buttons-container">
+        <a href="#" class="button">
+            <img src="buttons/note.png" alt="Button 1">
+        </a>
+        <a href="#" class="button">
+            <img src="buttons/voice.png" alt="Button 2">
+        </a>
+        <a href="#" class="button">
+            <img src="buttons/video.png" alt="Button 3">
+        </a>
+    </div>
+
+    <!-- Text Below Buttons -->
+    <div class="text-below-note slapish1">
+        <p>Voice Over Recording</p>
+    </div>
+    <div class="text-below-note-2 slapish2">
+        <p>Script Writing</p>
+    </div>
+    <div class="text-below-note-3 slapish3">
+        <p>Video Editing & Thumbnail Design</p>
+    </div>
+    <div class="text-below-note-4 slapish4">
+        <p>SERVICES</p>
+    </div>
+
+    <!-- Services Button Section -->
+    <div class="services-button-container">
+        <a href="#services" class="services-button">OUR SERVICES</a>
+    </div>
+
+    <!-- Black Image Section -->
+    <div class="black-image-container" id="black-image">
+        <img src="images/blackcover.jpg" alt="Black Image">
+        <div class="webp-image-container">
+            <img src="animation/rome11.jpg" alt="WebP Image">
+            <div class="text-container" id="scroll-target">
+                "Are you starting off with your YouTube journey?"
+                <span class="second-sentence">Or are you looking to scale up to a professional team for your channel?</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- New PNG Image Section (Hangblack) -->
+    <div class="profile-container">
+        <a href="https://www.fiverr.com/romewiz" target="_blank" class="prevent-link">
+            <img src="Fiverr/pf.png" alt="Profile Image">
+        </a>
+    </div>
+    <div class="hangblack-container">
+        <img src="Fiverr/hangblack.png" alt="Hangblack Image">
+    </div>
+    <div class="bline-container">
+        <img src="Fiverr/line.png" alt="bline Image">
+    </div>
+    <!-- Downward Button -->
+    <div class="downward-button">
+        <a href="#black-image" class="downward-button-link">↓</a>
+    </div>
+
+    <!-- Slider Section -->
+    <div class="slider-container" id="slider-section">
+        <!-- Slider Controls -->
+        <button class="slider-button left" onclick="moveSlide(-1)">&#10094;</button>
+        <div class="slider">
+            <div class="slider-slide slapish5">
+                <img src="images/p1.jpg" alt="Slider Image 1">
+                <a href="https://wa.me/918089199264" class="contact-button" target="_blank">Chat with US</a>
+            </div>
+            <div class="slider-slide slapish6">
+                <img src="images/p2.jpg" alt="Slider Image 2">
+                <a href="https://wa.me/918089199264" class="contact-button" target="_blank">Chat with US</a>
+            </div>
+            <div class="slider-slide slapish7">
+                <img src="images/p3.jpg" alt="Slider Image 3">
+                <a href="https://wa.me/918089199264" class="contact-button" target="_blank">Chat with US</a>
+            </div>
+            <div class="slider-slide slapish8">
+                <img src="images/p4.jpg" alt="Slider Image 4">
+                <a href="https://wa.me/918089199264" class="contact-button" target="_blank">Chat with US</a>
+            </div>
+        </div>
+        <button class="slider-button right" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <!-- Text Overlay Section -->
+    <div class="text-fiver1-container">
+        <p class="textfiver1-overlay">Let my work speak on</p>
+    </div>
+        <!-- Text Overlay Section -->
+    <div class="text-fiver2-container">
+            <p class="textfiver2-overlay">speak ...</p>
+    </div>
+    <div class="text-fiver3-container">
+        <p class="textfiver3-overlay">ABOUT ME</p>
+    </div>
+    <!-- Background Image 40% Down from Slider -->
+    <div class="bg-image-40-container">
+        <img src="Fiverr/fiverbg.jpg" alt="Background Image 40%">
+    </div>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Main content goes here -->
+    </main>
+
+    <!-- Link to the JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

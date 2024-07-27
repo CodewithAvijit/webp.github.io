@@ -1,0 +1,1081 @@
+/* General body and HTML settings */
+html {
+    scroll-behavior: smooth; /* For basic smooth scrolling */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+/* Header styles */
+header {
+    background-color: black;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 0;
+    position: relative;
+    height: 30px; /* Set a fixed height for the header */
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid white;
+    border-radius: 10px;
+    pointer-events: none;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    z-index: -1;
+}
+
+/* Navigation styles */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* WhatsApp icon styles */
+.whatsapp {
+    position: absolute;
+    right: 20px;
+}
+
+.whatsapp a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+}
+
+.whatsapp-icon {
+    width: 28px;
+    height: 28px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+/* Main content area */
+main {
+    padding: 20px;
+    min-height: 650vh;
+}
+
+/* Background image container */
+.bg-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('images/without-logo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    height: 133%; /* Increase height to 133% */
+}
+
+/* Overlay on the background image */
+.bg-image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0.1; /* Reduced opacity for better contrast */
+    z-index: 1;
+}
+
+/* Overlay image container */
+.overlay-image-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 2;
+    transition: transform 1s ease, box-shadow 1s ease;
+}
+
+.overlay-image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    opacity: 1;
+    border: none;
+    box-shadow: none;
+}
+
+.overlay-image-container:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Bottom image container */
+.bottom-image-container {
+    position: absolute;
+    top: 80%;
+    left: 0;
+    right: 0;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.bottom-image-container img {
+    width: 100%;
+    height: 1200px;
+}
+
+/* Bottom image container 2 */
+.bottom-image-container-2 {
+    position: absolute;
+    top: calc(80% + 650px + 0%); /* Move down by an additional 50% */
+    left: 0;
+    right: 0;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3; /* Ensure this is above the video */
+    filter: contrast(170%);
+}
+
+.bottom-image-container-2 img {
+    width: 100%;
+    height: 500px;
+    opacity: 1; /* Ensure full opacity */
+}
+
+/* Video container */
+.video-container {
+    position: absolute;
+    top: calc(80% + 1150px - 1100px); /* Move up by 30% of 1150px, which is 345px */
+    left: -85%; /* Shift the container left by 50% of its width */
+    width: 270%; /* Ensure the container width fits the page */
+    height: 300%;
+    opacity: 0.8;
+    z-index: 1; /* Ensure this is below the image containers */
+    display: flex;
+    justify-content: center; /* Center the video horizontally within the container */
+}
+
+.video-container video {
+    width: 100%; /* Ensure the video fits the width of the container */
+    height: auto; /* Maintain aspect ratio */
+    transform: scale(0.4); /* Scale down by 50% */
+    object-fit: cover; /* Ensure the video covers the area */
+}
+
+/* Buttons container */
+.buttons-container {
+    position: absolute;
+    bottom: -180%; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 300px; /* Adjust spacing between buttons */
+    z-index: 4; /* Ensure buttons are above the video */
+}
+
+/* Button styles */
+.button {
+    display: inline-block;
+    width: 80px; /* Adjust size as needed */
+    height: 80px; /* Adjust size as needed */
+    overflow: hidden;
+    border-radius: 60%;
+    border: 2px solid rgb(255, 255, 255); /* Added black border to buttons */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image covers the button */
+    display: block;
+}
+
+/* Button hover effect */
+.button:hover {
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
+}
+
+/* Black image container */
+.black-image-container {
+    position: absolute;
+    top: calc(60px + 135%);
+    left: 0;
+    right: 0;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.black-image-container img {
+    width: 100%;
+    height: 400px;
+}
+
+/* WebP image container */
+/* WebP image container */
+.webp-image-container {
+    position: absolute;
+    top: 30%; /* Adjusted as needed to fit the viewport */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+}
+
+/* WebP image container */
+.webp-image-container img {
+    max-width: 100%;
+    max-height: 150%;
+    display: block;
+    opacity: 1;
+    border: none;
+    box-shadow: none;
+    animation: riseUp 7s ease-out; /* Apply the rise-up animation */
+}
+
+@keyframes riseUp {
+    0% {
+        transform: translateY(50%) scale(0.9); /* Start from below and slightly scaled down */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scale(1); /* End at the original position and scale */
+        opacity: 1;
+    }
+}
+
+
+/* Text container */
+.text-container {
+    position: relative;
+    font-family: cursive;
+    font-size: 24px;
+    color: white;
+    word-spacing: 10px;
+    line-height: 1.5;
+    transform: translate(40%, 50px); /* Start position: shifted right by 40% and down by 50px */
+    opacity: 0;
+    animation: bounceIn 8s ease-out forwards; /* Apply the bounce-in animation with a slower duration */
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: translate(40%, 50px) scale(0.9); /* Start below, slightly scaled down, and shifted right */
+        opacity: 0;
+    }
+    60% {
+        transform: translate(40%, -10px) scale(1.1); /* Bounce upwards, scaled up, and shifted right */
+        opacity: 1;
+    }
+    80% {
+        transform: translate(40%, 5px) scale(1); /* Slight bounce down, and shifted right */
+    }
+    100% {
+        transform: translate(40%, 0) scale(1); /* End at the original position (shifted right) and scale */
+        opacity: 1;
+    }
+}
+
+/* Second sentence specific styles */
+.second-sentence {
+    display: block;
+    margin-top: 10%;
+}
+
+.downward-button {
+    position: absolute;
+    bottom: 3.5%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    z-index: 4;
+}
+
+.downward-button-link {
+    display: inline-block;
+    width: 60px; /* Adjust size for balance */
+    height: 60px; /* Adjust size for balance */
+    border-radius: 50%; /* Circular shape */
+    background-color: rgb(255, 255, 255); /* White background */
+    color: rgb(0, 0, 0); /* Black text */
+    text-align: center; /* Center text horizontally */
+    line-height: 60px; /* Center text vertically */
+    font-size: 30px; /* Smaller font size for balance */
+    text-decoration: none; /* Remove underline */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Enhanced shadow for depth */
+    border: 2px solid rgba(0, 0, 0, 0.7); /* Semi-transparent border */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transition */
+}
+
+.downward-button-link:hover {
+    background-color: rgb(0, 0, 0); /* Black background on hover */
+    color: rgb(255, 255, 255); /* White text on hover */
+    border-color: rgb(255, 255, 255); /* White border on hover */
+}
+.vertical-lines-container {
+    position: absolute;
+    top: calc(80% + 1150px - 4.3px); /* Same as video-container top */
+    left: 0;
+    right: 0;
+    height: 25%; /* Make it cover the entire height */
+    pointer-events: none; /* Make sure it doesn't interfere with other elements */
+    z-index: 2; /* Ensure it's above the video but below other content */
+    display: flex;
+    justify-content: space-between; /* Evenly space out the lines */
+    align-items: center; /* Center lines vertically */
+}
+
+/* Vertical lines */
+.vertical-lines-container::before,
+.vertical-lines-container::after,
+.vertical-lines-container div {
+    content: "";
+    position: absolute;
+    width: 2px; /* Slightly thicker for better visibility */
+    background-color: rgb(255, 255, 255); /* Semi-transparent black for subtlety */
+    height: 100%; /* Full height of the container */
+    border-radius: 2px; /* Rounded edges for a softer look */
+}
+
+.vertical-lines-container::before {
+    left: 24.5%; /* As specified */
+}
+
+.vertical-lines-container div {
+    left: 49.88%; /* As specified */
+    transform: translateX(-50%); /* Center alignment */
+}
+
+.vertical-lines-container::after {
+    left: 75.25%; /* As specified */
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Apply the fade-in animation to the text-below-note class */
+.text-below-note {
+    position: absolute;
+    bottom: -139.5%; /* Adjust based on your layout */
+    left: 51%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: rgb(255, 255, 255); /* Adjust text color as needed */
+    font-family: 'Bebas Neue', sans-serif; /* Changed to Bebas Neue font */
+    font-size: 25px; /* Adjust text size */
+    z-index: 5; /* Ensure it's above other content if necessary */
+    width: 100%; /* Adjust width as needed */
+    pointer-events: none; /* Ensure it doesn't interfere with other elements */
+    animation: fadeIn 7s ease-in-out; /* Apply the fade-in animation with a duration of 7 seconds */
+}
+
+.text-below-note p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply the fade-in animation to the text-below-note-2 class */
+.text-below-note-2 {
+    position: absolute;
+    bottom: -139.5%; /* Adjust based on your layout */
+    left: 25%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: rgb(255, 255, 255); /* Adjust text color as needed */
+    font-family: 'Bebas Neue', sans-serif; /* Changed to Bebas Neue font */
+    font-size: 25px; /* Adjust text size */
+    z-index: 5; /* Ensure it's above other content if necessary */
+    width: 100%; /* Adjust width as needed */
+    pointer-events: none; /* Ensure it doesn't interfere with other elements */
+    animation: fadeIn 7s ease-in-out; /* Apply the fade-in animation with a duration of 7 seconds */
+}
+
+.text-below-note-2 p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply the fade-in animation to the text-below-note-3 class */
+.text-below-note-3 {
+    position: absolute;
+    bottom: -139.5%; /* Adjust based on your layout */
+    left: 75%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: rgb(255, 255, 255); /* Adjust text color as needed */
+    font-family: 'Bebas Neue', sans-serif; /* Changed to Bebas Neue font */
+    font-size: 25px; /* Adjust text size */
+    z-index: 5; /* Ensure it's above other content if necessary */
+    width: 100%; /* Adjust width as needed */
+    pointer-events: none; /* Ensure it doesn't interfere with other elements */
+    animation: fadeIn 7s ease-in-out; /* Apply the fade-in animation with a duration of 7 seconds */
+}
+
+.text-below-note-3 p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Define the keyframes for the slide-in animation */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%) scale(0.8); /* Start off-screen to the left and smaller */
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(-10%) scale(0.9); /* Slightly past its final position to create a smooth effect */
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateX(-50%) scale(1); /* End at the original position and size */
+        opacity: 1;
+    }
+}
+
+.text-below-note-4 {
+    position: absolute;
+    bottom: -123%; /* Adjust based on your layout */
+    left: 50%; /* Start at the center horizontally */
+    transform: translateX(-50%); /* Center the element horizontally */
+    text-align: center;
+    color: rgb(255, 255, 255); /* Adjust text color as needed */
+    font-family: 'Bebas Neue', sans-serif; /* Changed to Bebas Neue font */
+    font-size: 35px; /* Adjust text size */
+    z-index: 5; /* Ensure it's above other content if necessary */
+    width: 100%; /* Adjust width as needed */
+    pointer-events: none; /* Ensure it doesn't interfere with other elements */
+    animation: slideInFromLeft 6s ease-in-out; /* Apply the slide-in animation */
+}
+
+.text-below-note-4 p {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* PNG Image Container */
+.png-image-container {
+    position: absolute;
+    top: 134%; /* Adjust to position downwards as needed */
+    left: 41.5%;
+    transform: translate(-50%, -50%) scale(0.2); /* Center horizontally and reduce scale by 70% */
+    z-index: 5; /* Ensure it's above the video but below other important content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* PNG Image Styling */
+.png-image-container img {
+    max-width: 100%; /* Ensure it scales down to a small logo size */
+    max-height: 100%; /* Ensure it scales down to a small logo size */
+    display: block;
+    opacity: 1; /* Ensure full opacity */
+    border: none;
+    box-shadow: none; /* Remove any box-shadow if added */
+}
+
+/* Button below SERVICES */
+/* New services button styles */
+.services-button-container {
+    position: relative;
+    text-align: center;
+    height: 100vh; /* Full height of the viewport */
+}
+
+/* Apply animation to the services button */
+/* Keyframes for a smooth, aesthetic rise-down animation */
+@keyframes riseDown {
+    0% {
+        transform: translate(-60%, -150%) scale(0.8); /* Start from 40% left and above with scaled down */
+        opacity: 0; /* Start fully transparent */
+    }
+    50% {
+        transform: translate(-50%, -80%) scale(1); /* Move to the center position */
+        opacity: 1; /* Fully opaque */
+    }
+    80% {
+        transform: translate(-50%, 0) scale(1); /* End at the original position and size */
+        opacity: 1; /* Remain fully opaque */
+    }
+    100% {
+        transform: translate(-50%, 0) scale(1); /* Final resting position */
+        opacity: 1; /* Remain fully opaque */
+    }
+}
+/* Apply animation to the services button */
+.services-button {
+    position: absolute;
+    bottom: -110%; /* Adjusted for visibility */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    display: inline-block;
+    padding: 12px 40px; /* Increased padding for a more substantial button */
+    border: 2px solid white; /* Border color white for better contrast */
+    background-color: black; /* Button background color black */
+    color: white; /* Font color white */
+    font-family: 'Bebas Neue', sans-serif; /* Changed to Bebas Neue font */
+    font-size: 20px;
+    text-decoration: none; /* Remove underline */
+    border-radius: 50px; /* More rounded corners */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    z-index: 10; /* Ensure it is above other elements */
+    animation: riseDown 4s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Apply the rise and fall animation with smooth easing */
+}
+.services-button:hover {
+    background-color: white; /* Button background color on hover */
+    color: black; /* Font color on hover */
+    border-color: white; /* Border color on hover */
+}
+
+
+/* Hang container styles */
+.hangcontainer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    z-index: 5; /* Ensure it's above other elements if necessary */
+}
+
+.hangcontainer img {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+}
+/* PNG Image Container */
+/* PNG Image Container */
+.png-image-container {
+    position: absolute;
+    top: 10%; /* Maintain the original position */
+    left: 93.5%; /* Maintain the original position */
+    transform: translate(-50%, -50%); /* Center the container based on its own dimensions */
+    z-index: 5; /* Ensure it's above the video but below other important content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* PNG Image Styling */
+.png-image-container img {
+    max-width: none; /* Remove maximum width constraint */
+    max-height: none; /* Remove maximum height constraint */
+    width: auto; /* Use the image's original width */
+    height: auto; /* Use the image's original height */
+    display: block;
+    opacity: 1; /* Ensure full opacity */
+    border: none;
+    box-shadow: none; /* Remove any box-shadow if added */
+}
+/* New PNG Image Section */
+.new-png-container {
+    position: absolute;
+    left: 38.5%;
+    top: 220%; /* Position 50% down from the top of the black image */
+    transform: translate(-50%, -50%) scale(0.13) translateX(20px); /* Center horizontally, scale to 25%, shift right 20px */
+    z-index: 10; /* Ensure it is above other content */
+}
+
+.new-png-container img {
+    display: block; /* Remove default inline spacing */
+    max-width: 100%; /* Ensure image fits within the container */
+}
+/* New PNG image container */
+.new-png-container2 {
+    position: absolute;
+    top: 270%; /* Adjust this value as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.new-png-container2 img {
+    width: 2000px; /* Adjust width as needed */
+    height: auto;
+}
+/* General styles for responsiveness */
+@media (max-width: 1024px) {
+    header {
+        padding: 25px 15px;
+        font-size: 1.25rem; /* 20px */
+    }
+
+    nav ul li {
+        margin: 0 15px;
+    }
+
+    nav ul li a {
+        font-size: 1.125rem; /* 18px */
+    }
+
+    .buttons-container {
+        gap: 25px;
+    }
+
+    .button {
+        width: 70px;
+        height: 70px;
+    }
+
+    .video-container {
+        transform: scale(0.8);
+    }
+
+    .text-container {
+        font-size: 1.5rem; /* 24px */
+        transform: translate(15%, 20px);
+    }
+
+    .text-container-2 {
+        font-size: 1.75rem; /* 28px */
+        transform: translate(15%, 15px);
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px 10px;
+        font-size: 1rem; /* 16px */
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    nav ul li a {
+        font-size: 1rem; /* 16px */
+    }
+
+    .buttons-container {
+        gap: 20px;
+    }
+
+    .button {
+        width: 60px;
+        height: 60px;
+    }
+
+    .video-container {
+        transform: scale(0.7);
+    }
+
+    .text-container {
+        font-size: 1.25rem; /* 20px */
+        transform: translate(15%, 15px);
+    }
+
+    .text-container-2 {
+        font-size: 1.5rem; /* 24px */
+        transform: translate(15%, 10px);
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 15px 10px;
+        font-size: 0.875rem; /* 14px */
+    }
+
+    nav ul li {
+        margin: 0 5px;
+    }
+
+    nav ul li a {
+        font-size: 0.875rem; /* 14px */
+    }
+
+    .buttons-container {
+        gap: 15px;
+    }
+
+    .button {
+        width: 50px;
+        height: 50px;
+    }
+
+    .video-container {
+        transform: scale(0.6);
+    }
+
+    .text-container {
+        font-size: 1rem; /* 16px */
+        transform: translate(10%, 10px);
+    }
+
+    .text-container-2 {
+        font-size: 1.125rem; /* 18px */
+        transform: translate(10%, 5px);
+    }
+}
+/* Slider Container */
+.slider-container {
+    position: relative;
+    width: 100%;
+    margin: 30px auto;
+    overflow: hidden;
+    margin-top: 83.9%; /* Ensure proper spacing for slider */
+}
+
+/* Slider */
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth transition */
+}
+
+/* Slider Slide */
+.slider-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.slider-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Contact Button */
+.contact-button {
+    position: absolute;
+    bottom: 60%;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%) translateY(50%); /* Center and shift up */
+    padding: 20px 45px;
+    text-decoration: none;
+    font-weight: 900;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    background-color: #539d22; /* Default color */
+    z-index: 20000;
+    font-family: 'Futura', 'sans-serif';
+    font-size: 1.2rem;
+}
+
+/* Slider Buttons */
+.slider-button {
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 32px;
+    line-height: 60px;
+    text-align: center;
+    z-index: 10;
+}
+
+.slider-button.left {
+    left: 20px;
+    transform: translateY(-50%);
+}
+
+.slider-button.right {
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+/* Contact Button Colors */
+.contact-button.green {
+    background-color: rgb(12, 132, 12);
+}
+
+.contact-button.blue {
+    background-color: rgb(47, 47, 177);
+}
+/* Background Image Container */
+/* Background Image Container */
+.bg-image-40-container {
+    position: relative;
+    width: 100%;
+    height: 610px; /* Adjust the height as needed */
+    text-align: center;
+    overflow: hidden; /* Ensures no overflow from the image */
+    z-index: 1;
+    margin-top: -40px; /* Adjust the margin as needed */
+}
+
+/* Image inside the container */
+.bg-image-40-container img {
+    width: 100%;
+    height: 100%; /* Keep the height consistent */
+    display: block;
+    object-fit: cover; /* Ensures the image covers the container */
+    position: relative;
+    transform: translateY(0%); /* Ensure the image is positioned correctly */
+}
+
+/* Profile Image Container */
+.profile-container {
+    position: absolute;
+    top: 445%; /* Adjust this to the appropriate position */
+    left: 78%;
+    transform: translateX(-50%);
+    z-index: 31; /* Ensure it appears above other content */
+    display: flex; /* Aligns children centrally */
+    justify-content: center; /* Aligns children horizontally in the center */
+    align-items: center; /* Aligns children vertically in the center */
+}
+
+.profile-container a {
+    display: inline-block; /* Ensures the anchor tag only takes up as much space as the image */
+}
+
+.profile-container img {
+    width: 60%; /* Scale the width as needed */
+    height: auto; /* Adjust height to maintain aspect ratio */
+    max-width: 700px; /* Optional: Set a max width to control the maximum size (adjust as needed) */
+    max-height: 600px; /* Optional: Set a max height to control the maximum size (adjust as needed) */
+    border-radius: 0; /* Remove the circle effect, making it a rectangle */
+    object-fit: cover; /* Ensure the image covers the container without stretching */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.profile-container a:hover img {
+    transform: scale(1.05); /* Slightly enlarge the image on hover */
+}
+/* Keyframes for Fade-In Animation */
+@keyframes fadeInSecond {
+    0% {
+        opacity: 0; /* Start fully transparent */
+        transform: translateY(20px); /* Start from below */
+    }
+    50% {
+        opacity: 0.5; /* Midway opacity */
+        transform: translateY(10px); /* Slightly moved */
+    }
+    100% {
+        opacity: 1; /* End fully opaque */
+        transform: translateY(0); /* End at normal position */
+    }
+}
+
+/* Text Overlay Section */
+.text-fiver1-container {
+    position: absolute; /* Absolute positioning within the parent container */
+    top: 435%; /* Position from the top of the container */
+    left: 68%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    width: calc(100% - 40px); /* Ensure text does not overflow */
+    box-sizing: border-box;
+    z-index: 20; /* Ensure the text appears above the image */
+    text-align: center; /* Center text alignment */
+}
+
+/* Text Style with Animation */
+.textfiver1-overlay {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5em;
+    font-weight: bold; /* Makes the text bold */
+    color: rgb(105, 105, 105); /* Text color */
+    padding: 20px; /* Increased padding for better spacing */
+    border-radius: 10px; /* More rounded corners */
+    text-align: center; /* Center text alignment */
+    width: fit-content; /* Adjust width to fit the content */
+    margin: 0; /* Remove default margin */
+    animation: fadeInSecond 7s ease-in-out forwards; /* Apply the fade-in animation with persistence */
+    opacity: 0; /* Ensure it starts hidden */
+}
+.text-fiver2-container {
+    position: absolute; /* Absolute positioning within the parent container */
+    top: 474%; /* Position from the top of the container */
+    left: 97%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    width: calc(100% - 40px); /* Ensure text does not overflow */
+    box-sizing: border-box;
+    z-index: 20; /* Ensure the text appears above the image */
+    text-align: center; /* Center text alignment */
+}
+
+/* Text Style with Animation */
+.textfiver2-overlay {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.7em;
+    font-weight: bold; /* Makes the text bold */
+    color: #505050; /* Text color */
+    padding: 20px; /* Increased padding for better spacing */
+    border-radius: 10px; /* More rounded corners */
+    text-align: center; /* Center text alignment */
+    width: fit-content; /* Adjust width to fit the content */
+    margin: 0; /* Remove default margin */
+    animation: fadeInSecond 7s ease-in-out forwards; /* Apply the fade-in animation with persistence */
+    opacity: 0; /* Ensure it starts hidden */
+}
+/* Keyframes for Fade-In and Fall-Down Animation */
+@keyframes fadeInFallDown {
+    0% {
+        opacity: 0; /* Start fully transparent */
+        transform: translateY(-50px); /* Start above the final position */
+    }
+    50% {
+        opacity: 0.5; /* Midway opacity */
+        transform: translateY(10px); /* Slightly moved down */
+    }
+    100% {
+        opacity: 1; /* End fully opaque */
+        transform: translateY(0); /* End at normal position */
+    }
+}
+
+/* Text Overlay Section */
+.text-fiver3-container {
+    position: absolute; /* Absolute positioning within the parent container */
+    top: 424%; /* Position from the top of the container */
+    left: 110%; /* Adjust horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    width: calc(100% - 40px); /* Ensure text does not overflow */
+    box-sizing: border-box;
+    z-index: 20; /* Ensure the text appears above the image */
+    text-align: center; /* Center text alignment */
+}
+
+/* Text Style with Animation */
+.textfiver3-overlay {
+    font-family: 'Bebas Neue', sans-serif; /* Font family */
+    font-size: 2.5em; /* Font size */
+    font-weight: bold; /* Makes the text bold */
+    color: rgba(0, 0, 0, 0.71); /* Text color */
+    padding: 20px; /* Padding for better spacing */
+    border-radius: 10px; /* Rounded corners */
+    text-align: center; /* Center text alignment */
+    width: fit-content; /* Adjust width to fit the content */
+    margin: 0; /* Remove default margin */
+    animation: fadeInFallDown 7s ease-in-out forwards; /* Apply the animation with persistence */
+    opacity: 0; /* Ensure it starts hidden */
+}
+
+/* Hangblack Image Container */
+.hangblack-container {
+    position: absolute; /* Adjust positioning as needed */
+    top: 435.3%; /* Position from the top of the container or page */
+    left: 80%; /* Position from the left of the container or page */
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+    z-index: 12; /* Ensure it appears above other content if necessary */
+    display: flex; /* Aligns children centrally */
+    justify-content: center; /* Aligns children horizontally in the center */
+    align-items: center; /* Aligns children vertically in the center */
+    width: 200%; /* Increase container width to accommodate larger image */
+    height: 200%; /* Increase container height to accommodate larger image */
+    overflow: hidden; /* Hide overflow if needed */
+    animation: fadeInb 12s ease-out; /* Apply the fade-in animation */
+}
+
+/* Hangblack Image */
+.hangblack-container img {
+    width: 50%; /* Scale image to fill the container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 20%; /* Remove max-width restriction */
+    max-height: 20%; /* Remove max-height restriction */
+    border-radius: 0; /* No rounded corners for this image */
+    object-fit: cover; /* Ensure the image covers the container without stretching */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Optional hover effect if you want */
+.hangblack-container img:hover {
+    transform: scale(1.05); /* Slightly enlarge the image on hover */
+}
+
+/* Bline Image Container */
+/* Define the keyframes for the fade-in animation */
+@keyframes fadeInb {
+    0% {
+        opacity: 0; /* Start with no opacity */
+    }
+    100% {
+        opacity: 1; /* End with full opacity */
+    }
+}
+
+/* Bline Image Container */
+.bline-container {
+    position: absolute; /* Adjust positioning as needed */
+    top: 490.3%; /* Position from the top of the container or page */
+    left: 20%; /* Position from the left of the container or page */
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+    z-index: 12; /* Ensure it appears above other content if necessary */
+    display: flex; /* Aligns children centrally */
+    justify-content: center; /* Aligns children horizontally in the center */
+    align-items: center; /* Aligns children vertically in the center */
+    width: 200%; /* Increase container width to accommodate larger image */
+    height: 200%; /* Increase container height to accommodate larger image */
+    overflow: hidden; /* Hide overflow if needed */
+    animation: fadeInb 12s ease-out; /* Apply the fade-in animation */
+}
+
+/* Bline Image */
+.bline-container img {
+    width: 50%; /* Scale image to fill the container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 10%; /* Adjust max-width restriction */
+    max-height: 10%; /* Adjust max-height restriction */
+    border-radius: 0; /* No rounded corners for this image */
+    object-fit: cover; /* Ensure the image covers the container without stretching */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Optional hover effect if you want */
+.bline-container img:hover {
+    transform: scale(1.05); /* Slightly enlarge the image on hover */
+}
+
